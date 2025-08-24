@@ -118,9 +118,6 @@ app.post("/webhook", bodyParser.json(), async (req, res) => {
 // This route can be used to send data to a payment provider or any other service
 // For example, we can use it to send the payment details to a payment gateway
 
-app.get("/", (req, res) => {
-  res.send("Webhook server is running");
-});
 ///adding the post request to implement the webhook functionality
 /**
  * @openapi
@@ -217,6 +214,10 @@ app.get("/payment-status/:id", async (req, res) => {
   res.json({ status: record ? record.status : "pending" });
   //if no other status is found the webhook is kept to pending and polled for inifinity
 });
+
+// app.get("/", (req, res) => {
+//   res.send("Webhook server is running");
+// });
 
 //since we are deploying both frontend and backed on render
 const path = require("path");
