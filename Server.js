@@ -221,10 +221,15 @@ app.get("/payment-status/:id", async (req, res) => {
 
 //since we are deploying both frontend and backed on render
 const path = require("path");
-app.use(express.static(path.join(__dirname, "client/webhooksapp/build")));
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "client/webhooksapp/build", "index.html"));
-});
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static(path.join(__dirname, "client/webhooksapp/build")));
+
+  app.get("*", (req, res) => {
+    res.sendFile(
+      path.join(__dirname, "client/webhooksapp/build", "index.html")
+    );
+  });
+}
 
 // uncomment if you want to use in development comment with deployed version
 app.listen(port, () => {
