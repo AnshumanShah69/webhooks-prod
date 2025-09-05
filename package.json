@@ -3,8 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "node Server.js",
-    "build": "cd client/webhooksapp && npm install && npm run build"
+    "start": "node Server.js"
   },
   "keywords": [],
   "author": "",
