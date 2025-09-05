@@ -1,10 +1,10 @@
 {
   "name": "webhooks-re",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "Server.js",
   "scripts": {
     "start": "node Server.js",
-    "build": "cd client/webhooksapp && npm install && npm run build"
+    "build": "cd client/webhooksapp && npm run build"
   },
   "keywords": [],
   "author": "",
