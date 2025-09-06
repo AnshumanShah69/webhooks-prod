@@ -3,8 +3,7 @@
   "version": "1.0.0",
   "main": "Server.js",
   "scripts": {
-    "postinstall": "cd client/webhooksapp && npm install",
-    "build": "cd client/webhooksapp && npm run build",
+    "heroku-postbuild": "cd client/webhooksapp && npm install && npm run build",
     "start": "node Server.js"
   },
   "keywords": [],
